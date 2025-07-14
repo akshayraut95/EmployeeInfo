@@ -58,7 +58,7 @@ public class EmployeeController {
     	  
   		 employeeService.deleteEmployeeById(id);
   		 
-  		 System.out.println("Deleted Succefully...");
+  		 System.out.println("Deleted Succefully......");
   		
 
 }
