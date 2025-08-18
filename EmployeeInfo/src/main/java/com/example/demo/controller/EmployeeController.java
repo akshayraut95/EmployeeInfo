@@ -28,8 +28,8 @@ public class EmployeeController {
 
       @PostMapping("/save")
       public ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee) {
-    //TODO: process POST request
-    Employee emp=employeeService.saveEmployee(employee);
+    
+    	  Employee emp=employeeService.saveEmployee(employee);
       return ResponseEntity.ok().body(emp);
      }
 
@@ -59,7 +59,14 @@ public class EmployeeController {
   		 employeeService.deleteEmployeeById(id);
   		 
   		 System.out.println("Deleted Succefully...");
+      }
   		
 
+  		@GetMapping("/{id}/fullname")
+  	    public ResponseEntity<String> getEmployeeFullName(@PathVariable int id) {
+  	        String fullName = employeeService.getEmployeeNameById(id);
+  	        return ResponseEntity.ok(fullName);
+  		
+  	
 }
 }

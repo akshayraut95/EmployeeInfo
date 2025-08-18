@@ -57,4 +57,10 @@ public class EmployeeServiceImpl implements EmployeeService{
 		
 	}
 
+	@Override
+	public String getEmployeeNameById(int id) {
+		Employee emp=employeeRepository.findById(id).orElseThrow();
+		return emp.getFirstname()+" "+emp.getLastname();
+	}
+
 }
